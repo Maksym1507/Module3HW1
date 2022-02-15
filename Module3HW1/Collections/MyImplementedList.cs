@@ -40,17 +40,14 @@ namespace Module3HW1.Collections
 
         public bool Remove(T item)
         {
-            bool deletionState = true;
+            bool deletionState = false;
 
             int index = Array.IndexOf(List, item);
 
             if (index != -1)
             {
                 RemoveAt(index);
-            }
-            else
-            {
-                deletionState = false;
+                deletionState = true;
             }
 
             return deletionState;

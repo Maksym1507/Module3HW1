@@ -25,6 +25,7 @@ namespace Module3HW1
         object IEnumerator.Current => throw new NotImplementedException();
 
         private T[] List { get; }
+
         private int Position { get; set; } = -1;
 
         public void Dispose()
