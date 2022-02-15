@@ -5,10 +5,10 @@ namespace Module3HW1
 {
     public class Starter
     {
-        public Starter(INotificationService message, IMyImplementedList<int> vs)
+        public Starter(INotificationService message, IMyImplementedList<int> list)
         {
             Message = message;
-            List = vs;
+            List = list;
         }
 
         private INotificationService Message { get; }
@@ -62,7 +62,9 @@ namespace Module3HW1
             Message.ShowMessage($"List capacity = {List.Capacity}\n");
             Message.ShowMessage($"Count elements in list = {List.Count}\n");
 
-            List.AddRange(new int[] { 1, 67, 9, 93 });
+            List.AddRange(new int[] { 31, 107, 3, -53 });
+
+            Message.ShowMessage($"Output list before sorting:\n");
 
             foreach (var item in List)
             {
