@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Module3HW1.Interfaces;
-using Module3HW1.Models;
+using Module3HW1.Collections;
 using Module3HW1.Services;
 
 namespace Module3HW1.Configs

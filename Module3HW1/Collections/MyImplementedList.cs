@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Module3HW1.Interfaces;
 
-namespace Module3HW1.Models
+namespace Module3HW1.Collections
 {
     public class MyImplementedList<T> : IMyImplementedList<T>
     {
