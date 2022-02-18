@@ -86,7 +86,10 @@ namespace Module3HW1.Collections
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            return new MyImplementedListEnumerator<T>(List, Count);
+            for (int i = 0; i < Count; i++)
+            {
+                yield return List[i];
+            }
         }
 
         public void IncreaseCapacity()

@@ -5,81 +5,81 @@ namespace Module3HW1
 {
     public class Starter
     {
+        private readonly INotificationService _message;
+
+        private readonly IMyImplementedList<int> _list;
+
         public Starter(INotificationService message, IMyImplementedList<int> list)
         {
-            Message = message;
-            List = list;
+            _message = message;
+            _list = list;
         }
-
-        private INotificationService Message { get; }
-
-        private IMyImplementedList<int> List { get; }
 
         public void Run()
         {
-            Message.ShowMessage($"List capacity = {List.Capacity}\n");
-            Message.ShowMessage($"Count elements in list = {List.Count}\n");
+            _message.ShowMessage($"List capacity = {_list.Capacity}\n");
+            _message.ShowMessage($"Count elements in list = {_list.Count}\n");
 
-            List.Add(5);
-            List.AddRange(new int[] { 1, 67, 9, 93 });
+            _list.Add(5);
+            _list.AddRange(new int[] { 1, 67, 9, 93 });
 
-            Message.ShowMessage($"List capacity = {List.Capacity}\n");
-            Message.ShowMessage($"Count elements in list = {List.Count}\n");
+            _message.ShowMessage($"List capacity = {_list.Capacity}\n");
+            _message.ShowMessage($"Count elements in list = {_list.Count}\n");
 
-            Message.ShowMessage($"Output list:\n");
+            _message.ShowMessage($"Output list:\n");
 
-            foreach (var item in List)
+            foreach (var item in _list)
             {
-                Message.ShowMessage(item + " ");
+                _message.ShowMessage(item + " ");
             }
 
-            Message.ShowMessage("\n");
+            _message.ShowMessage("\n");
 
-            List.Add(49);
+            _list.Add(49);
 
             try
             {
-                List.RemoveAt(2);
-                List.RemoveAt(10);
+                _list.RemoveAt(2);
+                _list.RemoveAt(10);
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Message.ShowMessage($"Failed to remove list item: {ex.Message}\n");
+                _message.ShowMessage($"Failed to remove list item: {ex.Message}\n");
             }
 
-            List.Remove(67);
-            List.Remove(9);
+            _list.Remove(67);
+            _list.Remove(9);
 
-            Message.ShowMessage($"Output list:\n");
+            _message.ShowMessage($"Output list:\n");
 
-            foreach (var item in List)
+            foreach (var item in _list)
             {
-                Message.ShowMessage(item + " ");
+                _message.ShowMessage(item + " ");
             }
 
-            Message.ShowMessage("\n");
+            _message.ShowMessage("\n");
 
-            Message.ShowMessage($"List capacity = {List.Capacity}\n");
-            Message.ShowMessage($"Count elements in list = {List.Count}\n");
+            _message.ShowMessage($"List capacity = {_list.Capacity}\n");
+            _message.ShowMessage($"Count elements in list = {_list.Count}\n");
 
-            List.AddRange(new int[] { 31, 107, 3, -53 });
+            _list.AddRange(new int[] { 31, 107, 3, -53 });
 
-            Message.ShowMessage($"Output list before sorting:\n");
+            _message.ShowMessage($"Output list before sorting:\n");
 
-            foreach (var item in List)
+            foreach (var item in _list)
             {
-                Message.ShowMessage(item + " ");
+                _message.ShowMessage(item + " ");
             }
 
-            Message.ShowMessage("\n");
+            _message.ShowMessage("\n");
 
-            List.Sort();
+            _list.Sort();
 
-            Message.ShowMessage($"Output sorted list:\n");
+            _message.ShowMessage($"Output sorted list:\n");
 
-            foreach (var item in List)
+            foreach (var item in _list)
             {
-                Message.ShowMessage(item + " ");
+                _message.ShowMessage(item + " ");
             }
         }
     }
